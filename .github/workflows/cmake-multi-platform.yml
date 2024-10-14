@@ -22,14 +22,14 @@ jobs:
       run: dnf update -y
     - name: Install Dependencies
       run: |
-        dnf install -y gcc clang git gcc gdb make openssl-devel libcurl-devel cmake
+        dnf install -y gcc clang git gcc gdb make openssl-devel libcurl-devel cmake aclocal
         dnf install -y glib2-devel autoconf gtk-doc ostree-devel bison liblzf e2fsprogs-devel xz-devel gpgme-devel fuse-devel
     - name: Checkout
       uses: actions/checkout@v3
     - name: "Build" # & Test"
       env:
-        CPR_BUILD_TESTS: OFF
-        CPR_BUILD_TESTS_SSL: OFF
+        CPR_BUILD_TESTS: OFF # ON
+        CPR_BUILD_TESTS_SSL: OFF # ON
         CPR_FORCE_OPENSSL_BACKEND: ON
         USE_SYSTEM_CURL: ${{ matrix.systemCurl }}
       uses: ashutoshvarma/action-cmake-build@master
@@ -39,5 +39,5 @@ jobs:
         cc: gcc
         cxx: g++
         build-type: ${{ matrix.buildType }}
-        run-test: false
+        run-test: false # true
         ctest-options: ${{ env.CTEST_OPTIONS }}
