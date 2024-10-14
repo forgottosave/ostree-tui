@@ -1,5 +1,3 @@
-# This starter workflow is for a CMake project running on multiple platforms. There is a different starter workflow if you just want a single platform.
-# See: https://github.com/actions/starter-workflows/blob/main/ci/cmake-single-platform.yml
 name: CMake on multiple platforms
 
 on:
@@ -22,7 +20,7 @@ jobs:
       run: dnf update -y
     - name: Install Dependencies
       run: |
-        dnf install -y gcc clang git gcc gdb make openssl-devel libcurl-devel cmake aclocal
+        dnf install -y gcc clang git gcc gdb make openssl-devel libcurl-devel cmake automake
         dnf install -y glib2-devel autoconf gtk-doc ostree-devel bison liblzf e2fsprogs-devel xz-devel gpgme-devel fuse-devel
     - name: Checkout
       uses: actions/checkout@v3
