@@ -23,7 +23,7 @@ jobs:
     - name: Install Dependencies
       run: |
         dnf install -y gcc clang git gcc gdb make openssl-devel libcurl-devel cmake
-        dnf install -y glib2-devel autoconf gtk-doc ostree-devel libtool-devel bison liblzf e2fsprogs-devel xz-devel gpgme-devel fuse-devel
+        dnf install -y glib2-devel autoconf gtk-doc ostree-devel bison liblzf e2fsprogs-devel xz-devel gpgme-devel fuse-devel
     - name: Checkout
       uses: actions/checkout@v3
     - name: "Build & Test"
