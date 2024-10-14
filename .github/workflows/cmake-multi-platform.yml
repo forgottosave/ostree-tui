@@ -23,14 +23,14 @@ jobs:
       #
       # To add more build types (Release, Debug, RelWithDebInfo, etc.) customize the build_type list.
       matrix:
-        os: [fedora-latest]
+        os: [ubuntu-latest]
         build_type: [Release]
         c_compiler: [gcc, clang]
         include:
-          - os: fedora-latest
+          - os: ubuntu-latest
             c_compiler: gcc
             cpp_compiler: g++
-          - os: fedora-latest
+          - os: ubuntu-latest
             c_compiler: clang
             cpp_compiler: clang++
 
@@ -46,7 +46,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        sudo dnf install -y glib2-devel autoconf gtk-doc ostree-devel libtool-devel bison liblzf e2fsprogs-devel xz-devel gpgme-devel fuse-devel
+        sudo apt-get install -y glib2-devel autoconf gtk-doc ostree-devel libtool-devel bison liblzf e2fsprogs-devel xz-devel gpgme-devel fuse-devel
 
 
     - name: Configure CMake
