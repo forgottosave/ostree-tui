@@ -48,7 +48,7 @@ jobs:
       # fedora:  sudo dnf install -y glib2-devel autoconf gtk-doc ostree-devel libtool-devel bison liblzf e2fsprogs-devel xz-devel gpgme-devel fuse-devel
       # ubuntu:  sudo apt-get install -y libglib2.0-dev autoconf gtk-doc-tools ostree
       run: |
-        sudo apt-get install -y libglib2.0-dev autoconf gtk-doc-tools ostree e2fsprogs
+        sudo apt-get install -y libglib2.0-dev autoconf gtk-doc-tools ostree e2fsprogs-dev
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
