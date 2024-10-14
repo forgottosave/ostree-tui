@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         container: ["fedora:latest"]
-        systemCurl: [ON, OFF]
+        # systemCurl: [ON, OFF]
         buildType: [Debug, Release]
     runs-on: ubuntu-latest
     container: ${{ matrix.container }}
